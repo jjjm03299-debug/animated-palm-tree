@@ -1,7 +1,7 @@
-# Use official Node.js image on Debian Bullseye (allows apt-get root privileges)
-FROM node:18-bullseye
+# Use Node.js on Debian Bookworm (avoids outdated security archive 404s)
+FROM node:18-bookworm
 
-# Install system dependencies: Ruby, Python3, and build essentials
+# Install system dependencies: Ruby, Python3, and build essentials cleanly
 RUN apt-get update && apt-get install -y \
     ruby-full \
     python3 \
